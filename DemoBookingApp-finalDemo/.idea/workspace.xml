@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f745c461-a6b3-4c5d-9a8a-3ad2209c2680" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(api)/user+api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/sign-in.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/sign-up.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/welcome.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/(tabs)/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/(tabs)/chat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/(tabs)/home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/(tabs)/profile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/(tabs)/rides.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-ExtraBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-ExtraLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/PlusJakartaSans-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/arrow-down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/arrow-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/back-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/dollar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/eyecross.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/pin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/selected-marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/target.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/to.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/get-started.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/no-result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/onboarding1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/onboarding2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/onboarding3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/signup-car.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CustomButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/InputField.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/OAuth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/RideCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nativewind-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/image.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/type.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/+not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/+not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/SpaceMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/adaptive-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/adaptive-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/splash-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ExternalLink.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HapticTab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HelloWave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ParallaxScrollView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThemedText.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThemedView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/ThemedText-test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/__snapshots__/ThemedText-test.tsx.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBarBackground.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBarBackground.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/Colors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useColorScheme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useColorScheme.web.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useThemeColor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2tIeN2PI1OLLKqRFKUIerEBTjfu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Study/VLU/III/HK2-25-26/React-Native/DemoProject&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;D:\\Study\\VLU\\III\\HK2-25-26\\React-Native\\Project\\node_modules\\eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Study\\VLU\\III\\HK2-25-26\\React-Native\\Project\\node_modules\\prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Study\\VLU\\III\\HK2-25-26\\React-Native\\Project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study\VLU\III\HK2-25-26\React-Native\Project" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Study\VLU\III\HK2-25-26\React-Native\Project\ryde-booking" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f745c461-a6b3-4c5d-9a8a-3ad2209c2680" name="Changes" comment="" />
+      <created>1740043972885</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740043972885</updated>
+      <workItem from="1740043974026" duration="6952000" />
+      <workItem from="1740057051176" duration="1785000" />
+      <workItem from="1740060425616" duration="2558000" />
+      <workItem from="1740063028906" duration="10316000" />
+      <workItem from="1740118574555" duration="486000" />
+      <workItem from="1740119250864" duration="1517000" />
+      <workItem from="1740154302431" duration="4334000" />
+      <workItem from="1740184182929" duration="581000" />
+      <workItem from="1740185153423" duration="12000" />
+      <workItem from="1740185167366" duration="123000" />
+      <workItem from="1740187378049" duration="1000" />
+      <workItem from="1740401656741" duration="15990000" />
+      <workItem from="1740456550045" duration="282000" />
+      <workItem from="1740462440016" duration="4000" />
+      <workItem from="1740558079455" duration="1197000" />
+      <workItem from="1740731785569" duration="987000" />
+      <workItem from="1740848722710" duration="216000" />
+      <workItem from="1741016084125" duration="1505000" />
+      <workItem from="1741071905871" duration="8000" />
+      <workItem from="1741161559135" duration="411000" />
+      <workItem from="1741162029994" duration="5122000" />
+      <workItem from="1741178490506" duration="309000" />
+      <workItem from="1741231919395" duration="9000" />
+      <workItem from="1741325912012" duration="4089000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/RideCard.tsx</url>
+          <line>86</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/(root)/book-ride.tsx</url>
+          <line>28</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/(root)/book-ride.tsx</url>
+          <line>58</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
