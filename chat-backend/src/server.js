@@ -216,14 +216,20 @@ app.post("/messages/mark-as-read/:roomId/:userId", async (req, res) => {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
+  // Log all rooms this socket is in
+  console.log("Socket rooms:", socket.rooms);
+
   socket.on("joinRoom", (roomId) => {
     socket.join(roomId);
     console.log(`User ${socket.id} joined room ${roomId}`);
+    console.log("Current rooms for socket:", socket.rooms);
   });
 
   socket.on("sendMessage", async ({ roomId, message }) => {
     try {
-      console.log("Received sendMessage:", { roomId, message });
+      console.log("Received sendMessage event:", { roomId, message });
+      console.log("Broadcasting to room:", roomId);
+
       const result = await db.query(
         "INSERT INTO messages (sender_id, message_room_id, message_text, timestamp, is_read) VALUES ($1, $2, $3, NOW(), FALSE) RETURNING id, timestamp",
         [message.sender_id, roomId, message.message_text]
@@ -237,8 +243,15 @@ io.on("connection", (socket) => {
         is_read: false,
       };
 
+      console.log("Saved message:", savedMessage);
+
+      // Log number of clients in the room before broadcasting
+      const room = io.sockets.adapter.rooms.get(roomId);
+      console.log(`Number of clients in room ${roomId}:`, room ? room.size : 0);
+
       // Gửi tin nhắn đến tất cả client trong room
       io.to(roomId).emit("message", savedMessage);
+      console.log("Message broadcasted to room", roomId);
 
       // Cập nhật lastMessage và unreadCount cho tất cả client
       const roomQuery = await db.query(

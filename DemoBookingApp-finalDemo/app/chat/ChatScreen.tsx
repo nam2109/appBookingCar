@@ -55,43 +55,113 @@ const ChatScreen: React.FC = () => {
 
   useEffect(() => {
     fetchChatRooms();
-  }, []);
 
-  useEffect(() => {
-    // Lắng nghe sự kiện updateUnreadCount từ Socket.IO
-    socket.on("updateUnreadCount", ({ roomId, lastMessage, unreadCount }) => {
+    // Lắng nghe sự kiện updateLastMessage từ Socket.IO
+    socket.on("updateLastMessage", ({ roomId, lastMessage, unreadCount }) => {
       console.log(
-        `Received updateUnreadCount for room ${roomId}: ${unreadCount}`
+        `Received updateLastMessage for room ${roomId}: lastMessage=${lastMessage}, unreadCount=${unreadCount}`
       );
       setChatRooms((prevChatRooms) =>
         prevChatRooms.map((room) =>
-          room.id.toString() === roomId ? { ...room, unreadCount } : room
+          room.id.toString() === roomId
+            ? {
+                ...room,
+                lastMessage: lastMessage || room.lastMessage,
+                unreadCount:
+                  unreadCount !== null ? unreadCount : room.unreadCount,
+              }
+            : room
+        )
+      );
+    });
+
+    // Lắng nghe sự kiện message để cập nhật tin nhắn mới
+    socket.on("message", ({ roomId, message }) => {
+      console.log(`Received new message for room ${roomId}:`, message);
+      setChatRooms((prevChatRooms) =>
+        prevChatRooms.map((room) => {
+          if (room.id.toString() === roomId) {
+            // Kiểm tra xem tin nhắn có phải từ người khác không
+            const isMessageFromOther = message.sender_id !== userId;
+            return {
+              ...room,
+              lastMessage: message.message_text,
+              unreadCount: isMessageFromOther
+                ? room.unreadCount + 1
+                : room.unreadCount,
+            };
+          }
+          return room;
+        })
+      );
+    });
+
+    // Lắng nghe sự kiện messagesRead để cập nhật trạng thái đã đọc
+    socket.on("messagesRead", ({ roomId }) => {
+      console.log(`Messages marked as read for room ${roomId}`);
+      setChatRooms((prevChatRooms) =>
+        prevChatRooms.map((room) =>
+          room.id.toString() === roomId ? { ...room, unreadCount: 0 } : room
         )
       );
     });
 
     // Dọn dẹp khi component unmount
     return () => {
-      socket.off("updateUnreadCount");
+      socket.off("updateLastMessage");
+      socket.off("message");
+      socket.off("messagesRead");
     };
-  }, []);
+  }, [userId]); // Thêm userId vào dependency array
+
+  // const handleChatPress = (room: ChatRoom) => {
+  //   const markMessagesAsRead = async () => {
+  //     try {
+  //       await fetch(`http://10.0.2.2:3000/mark-read/${room.id}/${userId}`, {
+  //         method: "POST",
+  //       });
+  //       setChatRooms((prevChatRooms) =>
+  //         prevChatRooms.map((r) =>
+  //           r.id === room.id ? { ...r, unreadCount: 0 } : r
+  //         )
+  //       );
+  //     } catch (error) {
+  //       console.error("Error marking messages as read:", error);
+  //     }
+  //   };
+
+  //   markMessagesAsRead();
+  //   // 👉 điều hướng bằng expo-router
+  //   router.push({
+  //     pathname: `/chat/${room.id}`,
+  //     params: { user: JSON.stringify(room.otherUser) }, // user sẽ được parse lại trong trang chi tiết
+  //   });
+  // };
 
   const handleChatPress = (room: ChatRoom) => {
+    // Đánh dấu tất cả tin nhắn trong phòng chat là đã đọc khi vào phòng
     const markMessagesAsRead = async () => {
       try {
-        await fetch(`http://10.0.2.2:3000/mark-read/${room.id}/${userId}`, {
-          method: "POST",
-        });
+        await fetch(
+          `http://10.0.2.2:3000/messages/mark-as-read/${room.id}/${userId}`,
+          {
+            method: "POST",
+          }
+        );
         setChatRooms((prevChatRooms) =>
           prevChatRooms.map((r) =>
             r.id === room.id ? { ...r, unreadCount: 0 } : r
           )
         );
+        // Gửi sự kiện updateUnreadCount để cập nhật cho các client khác
+        socket.emit("updateUnreadCount", {
+          roomId: room.id.toString(),
+          userId,
+        });
       } catch (error) {
         console.error("Error marking messages as read:", error);
       }
     };
-
     markMessagesAsRead();
     // 👉 điều hướng bằng expo-router
     router.push({

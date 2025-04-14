@@ -50,8 +50,6 @@ const ChatDetail = () => {
     );
   }
 
-  // ... phần còn lại giữ nguyên
-
   const fetchMessages = async () => {
     try {
       console.log("Fetching messages for chatId:", chatId);
@@ -69,6 +67,20 @@ const ChatDetail = () => {
       setIsMessagesLoaded(true);
     }
   };
+  const markMessagesAsRead = async () => {
+    try {
+      await fetch(
+        `http://10.0.2.2:3000//messages/mark-as-read/${chatId}/${userId}`,
+        {
+          method: "POST",
+        }
+      );
+      // Gửi sự kiện updateUnreadCount để cập nhật cho các client khác
+      socket.emit("updateUnreadCount", { roomId: chatId, userId });
+    } catch (error) {
+      console.error("Error marking messages as read:", error);
+    }
+  };
 
   useEffect(() => {
     console.log("chatId:", chatId);
@@ -84,15 +96,12 @@ const ChatDetail = () => {
     socket.on("message", (message: Message) => {
       console.log("Received new message:", message);
       setMessages((prevMessages) => {
+        // Kiểm tra xem tin nhắn đã tồn tại chưa
         const existingMessageIndex = prevMessages.findIndex(
-          (msg) =>
-            msg.message_text === message.message_text &&
-            msg.sender_id === message.sender_id
+          (msg) => msg.id === message.id
         );
         if (existingMessageIndex !== -1) {
-          const updatedMessages = [...prevMessages];
-          updatedMessages[existingMessageIndex] = message;
-          return updatedMessages;
+          return prevMessages; // Tin nhắn đã tồn tại, không cần thêm
         }
         return [...prevMessages, message];
       });
@@ -110,10 +119,24 @@ const ChatDetail = () => {
       }
     });
 
+    socket.on("messagesRead", (updatedMessages: Message[]) => {
+      console.log("Received messagesRead:", updatedMessages);
+      setMessages((prevMessages) =>
+        prevMessages.map((msg) => {
+          const updatedMsg = updatedMessages.find((m) => m.id === msg.id);
+          return updatedMsg ? { ...msg, is_read: updatedMsg.is_read } : msg;
+        })
+      );
+    });
+
+    // Đánh dấu tin nhắn là đã đọc khi vào phòng
+    markMessagesAsRead();
+
     return () => {
       socket.off("message");
       socket.off("typing");
       socket.off("stopTyping");
+      socket.off("messagesRead");
     };
   }, [isMessagesLoaded, chatId]);
 
@@ -132,15 +155,15 @@ const ChatDetail = () => {
       sender_id: userId!,
       message_text: newMessage,
       timestamp: new Date().toLocaleTimeString(),
+      is_read: false,
     };
-
-    setMessages((prevMessages) => [...prevMessages, message]);
-    console.log("Added message to state:", message);
-
+    // Gửi tin nhắn qua socket
     socket.emit("sendMessage", {
       roomId: chatId,
       message: { sender_id: userId!, message_text: newMessage },
     });
+    // Không thêm tin nhắn vào state local nữa
+    // Tin nhắn sẽ được thêm thông qua socket.on("message")
     setNewMessage("");
   };
 
@@ -159,7 +182,7 @@ const ChatDetail = () => {
         component={ChatDetail}
         options={{ headerShown: false }}
       />
-      <Header title={user.name} showBackButton={true} />
+      <Header title={parsedUser.name} showBackButton={true} />
 
       <View style={styles.chatContainer}>
         <FlatList
@@ -179,6 +202,9 @@ const ChatDetail = () => {
               >
                 <Text style={styles.messageText}>{item.message_text}</Text>
                 <Text style={styles.timestamp}>{item.timestamp}</Text>
+                {item.sender_id === userId && item.is_read && (
+                  <Text style={styles.readIndicator}>✔</Text>
+                )}
               </View>
             );
           }}
